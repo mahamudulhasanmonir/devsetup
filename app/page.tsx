@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Github, Mail, ArrowUpRight } from "lucide-react";
 import { OS, CATEGORIES } from "@/app/lib/tools";
 import { generateMarkdown } from "@/app/lib/generator";
 import OSSelector from "@/app/components/OSSelector";
@@ -103,7 +104,7 @@ export default function HomePage() {
         </header>
 
         {/* Main content */}
-        <main className="max-w-5xl mx-auto px-4 sm:px-6 pb-32">
+        <main className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
           {/* OS Section */}
           <div className="card-glow rounded-2xl bg-[#111118] border border-[#2a2a3e] p-5 sm:p-6 mb-6">
             <OSSelector
@@ -180,6 +181,63 @@ export default function HomePage() {
             />
           </div>
         </main>
+
+        {/* Footer / Developer Credit */}
+        <footer className="max-w-5xl mx-auto px-4 sm:px-6 pb-12">
+          <div className="card-glow rounded-2xl bg-[#111118] border border-[#2a2a3e] p-5 sm:px-6 sm:py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold text-white">
+                Built by{" "}
+                <span className="gradient-text">mahamudulhasanmonir</span>
+              </p>
+              <p className="text-xs text-[#8b8ba0] mt-0.5">
+                Questions, feedback, or tool requests? Reach out anytime.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full sm:w-auto">
+              <a
+                href="https://github.com/mahamudulhasanmonir"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-[#2a2a3e] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-all"
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-7 h-7 rounded-lg bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center shrink-0">
+                    <Github className="w-3.5 h-3.5 text-indigo-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-[10px] uppercase tracking-wider text-[#8b8ba0]">
+                      GitHub
+                    </div>
+                    <div className="text-xs font-medium text-white truncate">
+                      @mahamudulhasanmonir
+                    </div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#8b8ba0] group-hover:text-indigo-300 shrink-0 transition-colors" />
+              </a>
+              <a
+                href="mailto:bd.mahamuduldev@gmail.com"
+                className="group flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl bg-white/[0.03] border border-[#2a2a3e] hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-all"
+              >
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-7 h-7 rounded-lg bg-indigo-500/15 border border-indigo-500/30 flex items-center justify-center shrink-0">
+                    <Mail className="w-3.5 h-3.5 text-indigo-400" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-[10px] uppercase tracking-wider text-[#8b8ba0]">
+                      Email
+                    </div>
+                    <div className="text-xs font-medium text-white truncate">
+                      bd.mahamuduldev@gmail.com
+                    </div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#8b8ba0] group-hover:text-indigo-300 shrink-0 transition-colors" />
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
 
       {/* Sticky bottom bar */}
