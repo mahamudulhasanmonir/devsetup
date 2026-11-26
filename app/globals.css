@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --accent-dark: #4f46e5;
+  --surface: #111118;
+  --surface-2: #1a1a24;
+  --surface-3: #22223a;
+  --border: #2a2a3e;
+  --text-muted: #8b8ba0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+.card-glow {
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.15),
+    0 4px 24px rgba(99, 102, 241, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+.card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35),
+    0 8px 32px rgba(99, 102, 241, 0.14);
+}
+
+.checkbox-custom {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #3a3a55;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  position: relative;
+}
+.checkbox-custom:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.checkbox-custom:checked::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+.checkbox-custom:hover {
+  border-color: var(--accent-light);
+}
+
+.os-btn {
+  transition: all 0.2s ease;
+}
+.os-btn.active {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3),
+    0 4px 20px rgba(99, 102, 241, 0.1);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #a78bfa 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tool-card {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.tool-card:hover {
+  background: rgba(99, 102, 241, 0.05);
+}
+.tool-card.selected {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: rgba(99, 102, 241, 0.3);
+}
